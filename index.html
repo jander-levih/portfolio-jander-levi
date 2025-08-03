@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jander Levi - Desenvolvedor Full Stack & Analista de Dados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#8B5CF6',
+                        dark: '#181818',
+                        light: '#FFFFFF'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #5D5CDE;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #5D5CDE; }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .skill-bar {
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-dark text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/90 dark:bg-dark/90 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary">
+                    <i class="fas fa-code mr-2"></i>JANDER
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-primary transition-colors">Início</a>
+                    <a href="#about" class="hover:text-primary transition-colors">Sobre</a>
+                    <a href="#experience" class="hover:text-primary transition-colors">Experiência</a>
+                    <a href="#skills" class="hover:text-primary transition-colors">Habilidades</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contato</a>
+                </div>
+                <button onclick="toggleTheme()" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:inline"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-dark dark:to-gray-900">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-10 lg:mb-0">
+                    <div class="mb-6">
+                        <span class="text-primary font-semibold text-lg">Olá, eu sou</span>
+                        <h1 class="text-5xl lg:text-6xl font-bold mt-2 mb-4">
+                            Jander Levi
+                        </h1>
+                        <div class="text-2xl lg:text-3xl text-gray-600 dark:text-gray-300 typing-animation">
+                            Desenvolvedor Full Stack
+                        </div>
+                    </div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Profissional versátil com experiência em análise de dados e desenvolvimento de sistemas. 
+                        Especializado em criar soluções web funcionais e realizar análises estratégicas para apoiar a tomada de decisão.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary hover:bg-secondary text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Entre em Contato
+                        </a>
+                        <a href="#about" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                            Sobre Mim
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-80 h-80 rounded-full overflow-hidden border-8 border-primary/20 floating">
+                            <img src="foto de perfil.jpeg" 
+                                 alt="Jander Levi" 
+                                 class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-full">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Sobre Mim</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Conheça mais sobre minha trajetória e paixão por tecnologia
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Desenvolvedor & Analista de Dados</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        Com 20 anos e uma paixão genuína por tecnologia, sou um desenvolvedor full stack em constante evolução. 
+                        Atualmente cursando Análise e Desenvolvimento de Sistemas na Universidade Anhanguera, combino conhecimento 
+                        teórico com experiência prática.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        Minha experiência abrange desde desenvolvimento web com React e JavaScript até análise de dados com 
+                        SQL e Power BI. Busco sempre criar soluções que gerem valor real para empresas e usuários.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Localização</h4>
+                            <p class="text-gray-600 dark:text-gray-300">São Paulo, SP</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Idade</h4>
+                            <p class="text-gray-600 dark:text-gray-300">20 anos</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Email</h4>
+                            <p class="text-gray-600 dark:text-gray-300">janderlevih@gmail.com</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary mb-2">Telefone</h4>
+                            <p class="text-gray-600 dark:text-gray-300">(11) 99404-7765</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-graduation-cap text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Formação Acadêmica</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Análise e Desenvolvimento de Sistemas</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Universidade Anhanguera - Em andamento
+                        </p>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg card-hover">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-briefcase text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Experiência Atual</h4>
+                                <p class="text-sm text-gray-600 dark:text-gray-300">Auxiliar de Cobrança</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            G2G Telecom - Março 2025 - Atual
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Experiência Profissional</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Minha trajetória profissional e projetos de desenvolvimento
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <!-- Current Position -->
+                    <div class="bg-white dark:bg-dark p-8 rounded-lg shadow-lg card-hover border-l-4 border-primary">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-primary">Auxiliar de Cobrança</h3>
+                                <p class="text-lg font-semibold">G2G Telecom</p>
+                            </div>
+                            <span class="text-sm bg-primary/10 text-primary px-3 py-1 rounded-full">Mar 2025 - Atual</span>
+                        </div>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>• Gerenciamento de dados financeiros com foco na qualidade e consistência</li>
+                            <li>• Desenvolvimento de relatórios e dashboards para visualização de dados</li>
+                            <li>• Acompanhamento de pagamentos e controle de inadimplência</li>
+                        </ul>
+                    </div>
+
+                    <!-- Development Experience -->
+                    <div class="bg-white dark:bg-dark p-8 rounded-lg shadow-lg card-hover border-l-4 border-secondary">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-secondary">Desenvolvedor Full Stack Web</h3>
+                                <p class="text-lg font-semibold">Freelancer</p>
+                            </div>
+                            <span class="text-sm bg-secondary/10 text-secondary px-3 py-1 rounded-full">2023 - Atual</span>
+                        </div>
+                        <ul class="text-gray-600 dark:text-gray-300 space-y-2">
+                            <li>• Desenvolvimento de aplicações web responsivas e funcionais</li>
+                            <li>• Utilização de React, JavaScript e Firebase</li>
+                            <li>• Foco na usabilidade e performance das aplicações</li>
+                        </ul>
+                    </div>
+
+                    <!-- Previous Positions -->
+                    <div class="bg-white dark:bg-dark p-8 rounded-lg shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Atendente de Operações II</h3>
+                                <p class="text-lg font-semibold">Animália Park</p>
+                            </div>
+                            <span class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">Jul 2024 - Mar 2025</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Atendimento ao público e manutenção de registros operacionais.
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-dark p-8 rounded-lg shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold">Especialista em Crédito Imobiliário</h3>
+                                <p class="text-lg font-semibold">Grupo Mais Valor</p>
+                            </div>
+                            <span class="text-sm bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-full">Nov 2023 - Jun 2024</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Análise de crédito e documentação, contribuindo para a estruturação de dados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Habilidades Técnicas</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Tecnologias e ferramentas que domino para criar soluções eficientes
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fab fa-react text-3xl text-blue-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Frontend Development</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>React</span>
+                            <span class="text-primary font-semibold">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 90%"></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>JavaScript</span>
+                            <span class="text-primary font-semibold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 85%"></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>HTML/CSS</span>
+                            <span class="text-primary font-semibold">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & Database -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-database text-3xl text-green-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Backend & Database</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>SQL</span>
+                            <span class="text-primary font-semibold">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 80%"></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Firebase</span>
+                            <span class="text-primary font-semibold">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 75%"></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>ETL Tools</span>
+                            <span class="text-primary font-semibold">70%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analysis -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-line text-3xl text-purple-500 mr-3"></i>
+                        <h3 class="text-xl font-bold">Análise de Dados</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span>Power BI</span>
+                            <span class="text-primary font-semibold">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 85%"></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Tableau</span>
+                            <span class="text-primary font-semibold">75%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 75%"></div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Excel</span>
+                            <span class="text-primary font-semibold">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full skill-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Entre em Contato</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Vamos conversar sobre oportunidades e projetos interessantes
+                </p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">janderlevih@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Telefone</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">(11) 99404-7765</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-whatsapp text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">WhatsApp</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">(11) 97247-4118</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold">Localização</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">São Paulo, SP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6">Envie uma Mensagem</h3>
+                        <form class="space-y-6" onsubmit="handleContactForm(event)">
+                            <div>
+                                <input type="text" placeholder="Seu Nome" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-base focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Seu Email" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-base focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Assunto" required
+                                       class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-base focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <textarea placeholder="Sua Mensagem" rows="5" required
+                                          class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-base focus:ring-2 focus:ring-primary focus:border-transparent resize-none"></textarea>
+                            </div>
+                            <button type="submit" 
+                                    class="w-full bg-primary hover:bg-secondary text-white py-3 rounded-lg font-semibold transition-colors">
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p>&copy; 2025 Jander Levi. Todos os direitos reservados.</p>
+                <p class="text-gray-400 mt-2">Desenvolvedor Full Stack & Analista de Dados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark'));
+        }
+
+        // Initialize theme
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('darkMode'))) {
+            document.documentElement.classList.add('dark');
+        }
+
+        // Theme change listener
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (!localStorage.getItem('darkMode')) {
+                if (event.matches) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form handler
+        function handleContactForm(event) {
+            event.preventDefault();
+            showAlert('Obrigado pelo contato! Entrarei em contato em breve.');
+        }
+
+        // Custom alert function (following guidelines)
+        function showAlert(message) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full mx-4">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-check-circle text-green-500 text-2xl mr-3"></i>
+                        <h3 class="text-lg font-semibold">Sucesso!</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">${message}</p>
+                    <div class="flex justify-end">
+                        <button class="px-4 py-2 bg-primary text-white hover:bg-secondary rounded transition-colors" onclick="this.closest('.fixed').remove()">OK</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                if (modal.parentNode) {
+                    modal.remove();
+                }
+            }, 3000);
+        }
+
+        // Animate skill bars when in view
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe skills section
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        // Mobile menu toggle (if needed for smaller screens)
+        function toggleMobileMenu() {
+            const menu = document.querySelector('.mobile-menu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
