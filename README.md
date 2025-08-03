@@ -41,12 +41,12 @@ Este portfólio foi criado para apresentar minha experiência profissional, habi
 
 ## 🏗️ Estrutura do Projeto
 portfolio/
-│
-├── index.html # Arquivo principal
-├── README.md # Documentação
-└── assets/ # (Futuros recursos adicionais)
-├── images/ # Imagens do projeto
-└── docs/ # Documentos adicionais
+-│
+-├── index.html # Arquivo principal
+-├── README.md # Documentação
+-└── assets/ # (Futuros recursos adicionais)
+-├── images/ # Imagens do projeto
+-└── docs/ # Documentos adicionais
 
 ## 🎯 Seções do Portfólio
 
